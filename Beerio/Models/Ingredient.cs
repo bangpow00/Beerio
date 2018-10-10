@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Beerio.Models
+﻿namespace Beerio.Models
 {
     // The basic building block.  This class could be extended to
     // relate to inventory
