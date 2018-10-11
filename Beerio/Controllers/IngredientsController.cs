@@ -20,9 +20,16 @@ namespace Beerio.Controllers
         }
 
         // GET: Ingredients
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            return View(await _context.Ingredients.ToListAsync());
+            var ingredients = from i in _context.Ingredients
+                          select i;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                ingredients = ingredients.Where(i =>
+                        i.Name.ToUpper().Contains(searchString.ToUpper()));
+            }
+            return View(await ingredients.ToListAsync());
         }
 
         // GET: Ingredients/Details/5

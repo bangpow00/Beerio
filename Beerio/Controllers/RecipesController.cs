@@ -20,9 +20,19 @@ namespace Beerio.Controllers
         }
 
         // GET: Recipes
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            return View(await _context.Recipes.ToListAsync());
+            var recipes = from r in _context.Recipes
+                           select r;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                recipes = recipes.Where(r => 
+                        r.Name.ToUpper().Contains(searchString.ToUpper())
+                        || r.Creator.ToUpper().Contains(searchString.ToUpper())
+                        );
+            }
+
+            return View(await recipes.ToListAsync());
         }
 
         // GET: Recipes/Details/5
@@ -38,6 +48,7 @@ namespace Beerio.Controllers
 
             var recipe = await _context.Recipes
                 .Include(r => r.RecipeIngredients)
+                .AsNoTracking()
                 .FirstOrDefaultAsync(m => m.ID == id);
 
             if (recipe == null)
@@ -59,7 +70,7 @@ namespace Beerio.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Name,Creator,Notes,Temperature,Time")] Recipe recipe)
+        public async Task<IActionResult> Create([Bind("Name,Creator,Notes,Temperature,Time")] Recipe recipe)
         {
             if (ModelState.IsValid)
             {
