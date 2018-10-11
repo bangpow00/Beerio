@@ -4,10 +4,12 @@
 
 For the beer recipe exercise, I choose the backend portion.  Knowing time
 this week would be fragement, I started by just focusing thoughts on
-models. I abstracted out database interactions by having the models interact with
-faux repo patterns. This way I was able to start chip awary at the exercise by simply 
-thinking about organization and unit tests. The master branch contains this intial
-work. I setup an MVC project, but the only directories of useful code from this phase are:
+models. I abstracted a database connection by having faux repo patterns interact
+with models. This way I was able to chip away at the exercise by simply 
+starting with organization and unit tests. The master branch contains these intial
+design thoughts and work. I setup an MVC project, but the only directories of useful 
+code from this phase are:
+
 Beerio/Beerio/Data
 Beerio/Beerio/Models
 Beerio.Tests/
