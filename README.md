@@ -10,9 +10,9 @@ starting with organization and unit tests. The master branch contains these inti
 design thoughts and work. I setup an MVC project, but the only directories of useful 
 code from this phase are:
 
-Beerio/Beerio/Data
-Beerio/Beerio/Models
-Beerio.Tests/
+* Beerio/Beerio/Data
+* Beerio/Beerio/Models
+* Beerio.Tests/
 
 These directories encapuslate intial design and tesing ideas. 
 
