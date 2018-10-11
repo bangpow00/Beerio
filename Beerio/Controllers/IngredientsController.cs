@@ -26,8 +26,15 @@ namespace Beerio.Controllers
                           select i;
             if (!String.IsNullOrEmpty(searchString))
             {
+                // search for ingredient IDs too
+                var isInt = false;
+                if (Int32.TryParse(searchString, out int id))
+                {
+                    isInt = true;
+                }
                 ingredients = ingredients.Where(i =>
-                        i.Name.ToUpper().Contains(searchString.ToUpper()));
+                        i.Name.ToUpper().Contains(searchString.ToUpper())
+                        || (isInt && i.ID == id));
             }
             return View(await ingredients.ToListAsync());
         }
