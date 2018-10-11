@@ -15,6 +15,16 @@ namespace Beerio.Data
             recipes = new List<Recipe>();
         }
 
+        public void Update(Recipe recipe)
+        {
+
+        }
+
+        public void SaveChanges()
+        {
+
+        }
+
         public void Add(Recipe recipe)
         {
             CustomContract.Requires<ArgumentNullException>(recipe != null);

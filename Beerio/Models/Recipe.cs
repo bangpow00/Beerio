@@ -10,44 +10,23 @@ namespace Beerio.Models
 
         public string Name { get; set; }
 
-        public List<RecipeIngredient> RecipeIngredients { get; }
+        public string Creator { get; set; }
 
-        public Recipe(string name)
-        {
-            Name = name;
-            RecipeIngredients = new List<RecipeIngredient>();
-        }
+        public string Notes { get; set; }
 
-        public void AddIngredient(Ingredient ingredient, Quantity quantity)
+        public string Tempature { get; set; }
+
+        public string Time { get; set; }
+
+        public List<RecipeIngredient> RecipeIngredients { get; set; } = new List<RecipeIngredient> { };
+
+        public void AddIngredient(Ingredient ingredient, float quantity, RecipeIngredient.Units units)
         {
             CustomContract.Requires<ArgumentNullException>(ingredient != null);
-            CustomContract.Requires<ArgumentNullException>(quantity != null);
+            CustomContract.Requires<ArgumentNullException>(quantity > float.Epsilon);
 
-            RecipeIngredients.Add(new RecipeIngredient() { Ingredient = ingredient, Quantity = quantity });
+            RecipeIngredients.Add(new RecipeIngredient() { IngredientID = ingredient.ID, Quantity = quantity, Unit = (int)units });
         }
 
-        public void Print()
-        {
-            Console.WriteLine(Name);
-            foreach (var r in RecipeIngredients)
-            {
-                Console.WriteLine("* {0}: {1} {2}", 
-                                r.Ingredient.Name, 
-                                r.Quantity.Value, 
-                                r.Quantity.Units);
-            }
-        }
-
-        public override string ToString()
-        {
-            string s = new string(Name + "\n");
-            foreach (var r in RecipeIngredients)
-            {
-                s += ("* " + r.Ingredient.Name + 
-                      ": " + r.Quantity.Value + 
-                      " " + r.Quantity.Units);
-            }
-            return s;
-        }
     }
 }

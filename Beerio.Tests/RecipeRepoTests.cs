@@ -18,10 +18,9 @@ namespace Beerio.Tests
         [TestMethod]
         public void TestAddRecipe()
         {
-            var recipe = new Recipe("foo");
+            var recipe = new Recipe() { Name = "foo" };
             var ingredient = new Ingredient() { Name = "Ingredient" };
-            var quantity = new Quantity() { Value = "1", Units = "Gal" };
-            recipe.AddIngredient(ingredient, quantity);
+            recipe.AddIngredient(ingredient, 1, RecipeIngredient.Units.oz);
 
             repo.Add(recipe);
 
