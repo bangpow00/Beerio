@@ -20,7 +20,7 @@ namespace Beerio.Tests
         {
             var recipe = new Recipe() { Name = "foo" };
             var ingredient = new Ingredient() { Name = "Ingredient" };
-            recipe.AddIngredient(ingredient, 1, RecipeIngredient.Units.oz);
+            recipe.AddRecipeIngredient(ingredient, 1, Units.oz);
 
             repo.Add(recipe);
 

@@ -20,7 +20,7 @@ namespace Beerio.Models
 
         public List<RecipeIngredient> RecipeIngredients { get; set; } = new List<RecipeIngredient> { };
 
-        public void AddIngredient(Ingredient ingredient, float quantity, RecipeIngredient.Units units)
+        public void AddRecipeIngredient(Ingredient ingredient, float quantity, Units units)
         {
             CustomContract.Requires<ArgumentNullException>(ingredient != null);
             CustomContract.Requires<ArgumentNullException>(quantity > float.Epsilon);

@@ -3,18 +3,6 @@
     // a Recipe is made up of a group of this class.
     public class RecipeIngredient
     {
-        public enum Units
-        {
-            gal = 1,
-            tb,
-            oz,
-            qt,
-            ml,
-            l,
-            lb,
-            g,
-            kg
-        }
 
         public int ID { get; set; }
 
@@ -25,5 +13,19 @@
         public float Quantity { get; set; }
 
         public int Unit { get; set; }
+    }
+
+    public enum Units
+    {
+        gal = 1,
+        tb,
+        oz,
+        qt,
+        ml,
+        l,
+        lb,
+        g,
+        kg,
+        cup
     }
 }
