@@ -14,7 +14,7 @@ code from this phase are:
 * Beerio/Beerio/Models
 * Beerio.Tests/
 
-These directories encapuslate intial design and tesing ideas. 
+These directories encapsulate intial design and tesing ideas. 
 
 ## A tale of two branches
 
