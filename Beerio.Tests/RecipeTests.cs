@@ -12,7 +12,7 @@ namespace Beerio.Tests
         {
             var recipe = new Recipe() { Name = "foo" };
             var ingredient = new Ingredient() { Name = "water" };
-            recipe.AddIngredient(ingredient, 1, RecipeIngredient.Units.gal);
+            recipe.AddIngredient(ingredient, 1, Units.gal);
 
             var l = recipe.RecipeIngredients;
 
@@ -25,7 +25,7 @@ namespace Beerio.Tests
         {
             var recipe = new Recipe() { Name = "no ingredient" };
 
-            recipe.AddIngredient(null, 1, RecipeIngredient.Units.oz);
+            recipe.AddIngredient(null, 1, Units.oz);
 
         }
 
@@ -36,7 +36,7 @@ namespace Beerio.Tests
             var recipe = new Recipe() { Name = "no quantity" };
             var ingredient = new Ingredient() { Name = "hops" };
 
-            recipe.AddIngredient(ingredient, 0, RecipeIngredient.Units.lb);
+            recipe.AddIngredient(ingredient, 0, Units.lb);
 
         }
 

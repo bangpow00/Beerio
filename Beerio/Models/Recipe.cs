@@ -14,18 +14,18 @@ namespace Beerio.Models
 
         public string Notes { get; set; }
 
-        public string Tempature { get; set; }
+        public string Temperature { get; set; }
 
         public string Time { get; set; }
 
         public List<RecipeIngredient> RecipeIngredients { get; set; } = new List<RecipeIngredient> { };
 
-        public void AddIngredient(Ingredient ingredient, float quantity, RecipeIngredient.Units units)
+        public void AddIngredient(Ingredient ingredient, float quantity, Units units)
         {
             CustomContract.Requires<ArgumentNullException>(ingredient != null);
             CustomContract.Requires<ArgumentNullException>(quantity > float.Epsilon);
 
-            RecipeIngredients.Add(new RecipeIngredient() { IngredientID = ingredient.ID, Quantity = quantity, Unit = (int)units });
+            RecipeIngredients.Add(new RecipeIngredient() { IngredientID = ingredient.ID, Quantity = quantity, Unit = units });
         }
 
     }
