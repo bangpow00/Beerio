@@ -16,4 +16,4 @@ items.  Where a RecipeIngredient has an Ingredient ID and a quantity.
 Getting the mapping from a Recipe, to a RecipeIngredient, to an Ingredient so I
 could display the Ingredient name on a page, is where I ran out of time.
 
-Yhinking more about that mapping is where I would like to spend more time.
+Thinking more about that mapping is where I would like to spend more time.
