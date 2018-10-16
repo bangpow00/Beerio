@@ -1,20 +1,20 @@
 # Beerio
 
-## Backend/Server side 
+## Beer Recipe
 
-For the beer recipe exercise, I choose the backend portion.  Knowing time
-this week would be fragement, I started by just focusing thoughts on
-models. I abstracted a database connection by having faux repo patterns interact
-with models. This way I was able to chip away at the exercise by simply 
-starting with organization and unit tests. The master branch contains these intial
-design thoughts and work. I setup an MVC project, but the only directories of useful 
+The goal of exercise was to explore creating a full stack app to manager beer recipes. 
+I started by just focusing thoughts on models. I abstracted a database connection by 
+having faux repo patterns interact with models. This way I was able to think about 
+organization and unit tests. The master branch contains these intial design thoughts
+and coding. I setup an MVC project, but the only directories of useful 
 code from this phase are:
 
 * Beerio/Beerio/Data
 * Beerio/Beerio/Models
 * Beerio.Tests/
 
-These directories encapsulate intial design and tesing ideas. 
+These directories encapsulate intial design and tesing ideas. Learning about Razor
+pages while creating the front end is the next phase.
 
 ## A tale of two branches
 
