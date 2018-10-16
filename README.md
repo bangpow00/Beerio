@@ -2,9 +2,9 @@
 
 ## Beer Recipe
 
-The goal of exercise was to explore creating a full stack app to manager beer recipes. 
-I started by just focusing thoughts on models. I abstracted a database connection by 
-having faux repo patterns interact with models. This way I was able to think about 
+The goal of exercise was to explore creating a full stack app to manage beer recipes. 
+I started by focusing on models and abstracted a database connection by 
+having faux repo patterns for interactions. This way I was able to think about 
 organization and unit tests. The master branch contains these intial design thoughts
 and coding. I setup an MVC project, but the only directories of useful 
 code from this phase are:
@@ -21,4 +21,3 @@ pages while creating the front end is the next phase.
 Later I sat down to wire in the database and flush out preliminary page views.
 The EFMVC branch contains this work. Please look at EFMVC for end-to-end
 implentation.
-
